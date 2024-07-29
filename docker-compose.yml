@@ -11,7 +11,7 @@ services:
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
     volumes:
-      - wordpress_data:/var/www/html
+      - ./wordpress:/var/www/html  # Cambiar a una carpeta local
 
   db:
     image: mysql:5.7
@@ -24,5 +24,4 @@ services:
       - db_data:/var/lib/mysql
 
 volumes:
-  wordpress_data:
   db_data:
